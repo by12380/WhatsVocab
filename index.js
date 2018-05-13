@@ -30,13 +30,17 @@ function displayWordDefinition (data) {
         if (result.headword.toLowerCase() === APP_DATA.query.toLowerCase()) {
             innerHtml += `
                 <div>
-                    <p>${result.headword}</p>
-                    <p>${result.senses[0].definition}</p>
+                    <p>${toFirstCharUpperCase(result.headword)}</p>
+                    <p>${toFirstCharUpperCase(result.senses[0].definition[0])}</p>
                 </div>
             `;
         }
     }
     $("#dictionaryResults").html(innerHtml);
+}
+
+function toFirstCharUpperCase(str) {
+    return str[0].toUpperCase() + str.substr(1);
 }
 
 $(handleFormSubmit);
