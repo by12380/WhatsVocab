@@ -86,21 +86,31 @@ function getNewsFromApi (word, callback) {
 
 function displayNewsArticles (data) {
     let innerHtml = "";
-    for (let article of data.articles) {
-        if (article.description != "") {
-            innerHtml += `
-                <div>
-                    <p>${article.title}</p>
-                    <p>${article.description}</p>
-                    <p>
-                        <a href="${article.url}" target="_blank">
-                            Go to article
-                        </a>
-                    </p>
-                </div>
-            `;
+    
+    if (data.totalResults != 0) {
+        for (let article of data.articles) {
+            if (article.description != "") {
+                innerHtml += `
+                    <div>
+                        <p>${article.title}</p>
+                        <p>${article.description}</p>
+                        <p>
+                            <a href="${article.url}" target="_blank">
+                                Go to article
+                            </a>
+                        </p>
+                    </div>
+                `;
+            }
         }
     }
+    else
+    {
+        innerHtml += `
+            <p>Sorry, no news articles were found related to the word entry.</p>
+        `;
+    }
+
     $("#newsResults").html(innerHtml);
 }
 
