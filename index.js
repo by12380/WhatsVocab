@@ -35,16 +35,28 @@ function getDefinitionFromApi (word, callback) {
 
 function displayWordDefinition (data) {
     let innerHtml = "";
-    for (let result of data.results) {
-        if (result.headword.toLowerCase() === APP_DATA.query.toLowerCase()) {
-            innerHtml += `
-                <div>
-                    <p>${toFirstCharUpperCase(result.headword)}</p>
-                    <p>${toFirstCharUpperCase(result.senses[0].definition[0])}</p>
-                </div>
-            `;
+
+    if (data.results.length != 0) {
+        for (let result of data.results) {
+            if (result.headword.toLowerCase() === APP_DATA.query.toLowerCase()) {
+                innerHtml += `
+                    <div>
+                        <p>${toFirstCharUpperCase(result.headword)}</p>
+                        <p>${toFirstCharUpperCase(result.senses[0].definition[0])}</p>
+                    </div>
+                `;
+            }
         }
     }
+    else
+    {
+        innerHtml += `
+            <div>
+                <p>Sorry, no dictionary entries were found.</p>
+            </div>
+        `;
+    }
+
     $("#dictionaryResults").html(innerHtml);
 }
 
