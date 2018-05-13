@@ -1,4 +1,6 @@
-const DICTIONARY_URL = "https://api.pearson.com/v2/dictionaries/ldoce5/entries";
+const DICTIONARY_API_DATA = {
+    url: "https://api.pearson.com/v2/dictionaries/ldoce5/entries"
+}
 
 //Need review regaring best practices
 const APP_DATA = {
@@ -9,19 +11,17 @@ function handleFormSubmit() {
     $("#searchForm").submit(e => {
         e.preventDefault();
         let query = $("#query").val();
+        APP_DATA.query = query;
         getDefinitionFromApi(query, displayWordDefinition);
     })
 }
 
 function getDefinitionFromApi (word, callback) {
-    let url = DICTIONARY_URL;
-    APP_DATA.query = word;
-
     let data = {
         headword: word,
         limit: 5
     }
-    $.getJSON(url, data, callback);
+    $.getJSON(DICTIONARY_API_DATA.url, data, callback);
 }
 
 function displayWordDefinition (data) {
