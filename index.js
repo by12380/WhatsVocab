@@ -93,7 +93,10 @@ function getNewsFromApi (word, callback) {
 }
 
 function displayNewsArticles (data) {
-    let innerHtml = "";
+    let innerHtml = `
+        <hr />
+        <p class="news-header">NEWS ARTICLES</p>
+    `;
     
     if (data.totalResults != 0) {
         for (let article of data.articles) {
@@ -115,10 +118,11 @@ function displayNewsArticles (data) {
     else
     {
         innerHtml += `
-            <p>Sorry, no news articles were found related to the word entry.</p>
+            <p class="news-error-msg">Sorry, no news articles were found related to the word entry.</p>
         `;
     }
 
+    innerHtml += `<hr />`;
     $("#newsResults").html(innerHtml);
 }
 
