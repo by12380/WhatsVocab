@@ -18,3 +18,19 @@ body {
     border-radius: 0;
     padding: 10px;
 }
+
+.entry-container {
+    padding: 15px;
+}
+
+.dict-header {
+    font-size: 26px;
+}
+
+.word-entry {
+    font-size: 20px;
+}
+
+.dict-error-msg {
+    font-size: 20px;
+}

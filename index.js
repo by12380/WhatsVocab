@@ -34,29 +34,37 @@ function getDefinitionFromApi (word, callback) {
 }
 
 function displayWordDefinition (data) {
-    let innerHtml = "";
+    let innerHtml = `
+        <hr />
+        <p class="dict-header">DICTIONARY</p>
+    `;
 
     if (data.results.length != 0) {
+        innerHtml += `<ol>`
         for (let result of data.results) {
             if (result.headword.toLowerCase() === APP_DATA.query.toLowerCase()) {
                 innerHtml += `
-                    <div>
-                        <p>${toFirstCharUpperCase(result.headword)}</p>
-                        <p>${toFirstCharUpperCase(result.senses[0].definition[0])}</p>
-                    </div>
+                    <li>
+                        <div class="entry-container">
+                            <p class="word-entry">${toFirstCharUpperCase(result.headword)}</p>
+                            <p>${toFirstCharUpperCase(result.senses[0].definition[0])}</p>
+                        </div>
+                    </li>
                 `;
             }
         }
+        innerHtml += `</ol>`
     }
     else
     {
         innerHtml += `
             <div>
-                <p>Sorry, no dictionary entries were found.</p>
+                <p class="dict-error-msg">Sorry, no dictionary entries were found.</p>
             </div>
         `;
     }
 
+    innerHtml += `<hr />`;
     $("#dictionaryResults").html(innerHtml);
 }
 
