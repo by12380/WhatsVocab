@@ -7,6 +7,8 @@
     <title>WhatsVocab</title>
     <link href="index.css" rel="stylesheet" type="text/css" />
     <link href="grid.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Muli|Lovers+Quarrel" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <script
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -15,16 +17,21 @@
 </head>
 <body>
     <main role="main">
-        <section>
+        <section class="search-section">
             <div class="row">
-                <div class="col-4"></div>
-                <div class="col-4">
+                <div class="col-1"></div>
+                <div class="col-10">
                     <form action="#" method="get" id="searchForm" class="search-form">
-                        <input type="text" name="query" id="query" class="search-box" placeholder="Enter a vocabulary" required>
-                        <input type="submit" class="search-btn" value="Search">
+                        <h1 class="site-header">WhatsVocab</h1>
+                        <div>
+                            <input type="text" name="query" id="query" class="search-box" placeholder="e.g. Apple" required>
+                            <button type="submit" class="search-btn">
+                                <i class="fas fa-search" height="40px"></i>
+                            </button>
+                        </div>
                     </form>
                 </div>
-                <div class="col-4"></div>
+                <div class="col-1"></div>
             </div>
         </section>
         <section>

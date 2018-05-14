@@ -1,5 +1,25 @@
 body {
     margin: 0;
+    font-family: 'Muli', sans-serif;
+}
+
+.site-header {
+    font-family: 'Lovers Quarrel', cursive;
+    font-size: 160px;
+    font-weight: 200;
+    color: white;
+    margin: 0px;
+}
+
+@media only screen and (max-width: 640px) {
+    .site-header {
+        font-size: 80px;
+    }
+}
+
+.search-section {
+    height: 100vh;
+    background: linear-gradient(to bottom right, #1B53CC, #6495FF);
 }
 
 .search-form {
@@ -9,14 +29,42 @@ body {
 }
 
 .search-box {
-    border-radius: 0;
-    padding: 10px;
+    border: 0px;
+    border-radius: 0px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 20px;
+    width: 70%;
+    font-size: 20px;
+    font-family: 'Muli', sans-serif;
+    height: 60px;
+    color: lightslategray;
+    caret-color: lightslategrey;
+}
+
+.search-box:focus {
+    outline: none;
 }
 
 .search-btn {
-    border: solid 1px;
+    position: relative;
+    border: 0px;
     border-radius: 0;
-    padding: 10px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: -5px;
+    font-size: 20px;
+    cursor: pointer;
+    color: lightslategrey;
+    top: -1px;
+    height: 60px;
+}
+
+.search-btn:focus, .search-btn:hover{
+    outline: none;
+    background-color: whitesmoke;
 }
 
 .entry-container {
@@ -25,6 +73,7 @@ body {
 
 .dict-header {
     font-size: 26px;
+    color: royalblue;
 }
 
 .word-entry {
