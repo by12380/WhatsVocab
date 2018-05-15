@@ -35,6 +35,7 @@ function getDefinitionFromApi (word, callback) {
 }
 
 function displayWordDefinition (data) {
+    let count = 0;
     let innerHtml = `
         <div class="dict-result-container">
         <p class="dict-header"><i class="fas fa-book"></i>DICTIONARY</p>
@@ -43,29 +44,27 @@ function displayWordDefinition (data) {
     if (data.results.length != 0) {
         innerHtml += `<ol>`
         for (let result of data.results) {
-            if (result.headword.toLowerCase() === APP_DATA.query.toLowerCase()) {
+            if (result.headword.toLowerCase() === APP_DATA.query.toLowerCase()
+                && result.senses[0].definition) {
                 innerHtml += `
                     <li>
                         <div class="entry-container">
                             <p class="word-entry">
                                 ${toFirstCharUpperCase(result.headword)}
-                                <span class="part-of-speech">${result.part_of_speech}</span>
+                                ${displayPartOfSpeech(result)}
                             </p>
-                            <p class="pronunciation">
-                                / ${result.pronunciations[0].ipa} /
-                                <audio src="${DICTIONARY_API_DATA.source}${result.pronunciations[0].audio[1].url}" id="${result.id}"></audio>
-                                <i class="fas fa-volume-up js-play-btn audio-btn" aria-hidden="true" onclick="$('#${result.id}').get(0).play()"></i>
-                            </p>
+                            ${displayAudioPlayerForPronunciation(result)}
                             <p>${toFirstCharUpperCase(result.senses[0].definition[0])}</p>
                         </div>
                     </li>
                 `;
+                count++;
             }
         }
         innerHtml += `</ol>`;
     }
-    else
-    {
+
+    if (count === 0) {
         innerHtml += `
             <div>
                 <p class="dict-error-msg">Sorry, no dictionary entries were found.</p>
@@ -75,6 +74,48 @@ function displayWordDefinition (data) {
 
     innerHtml += `</div>`;
     $("#dictionaryResults").html(innerHtml);
+}
+
+function displayAudioPlayerForPronunciation(result) {
+
+    let innerHtml = "";
+
+    //Check if pronunciation data is available
+    if (result.pronunciation) {
+
+        innerHtml += `
+            <p class="pronunciation">
+            / ${result.pronunciations[0].ipa} /
+        `
+
+        //Check if pronunciation audio data is available
+        if (result.pronunciations[0].audio) {
+            let pronunciation = result.pronunciations[0];
+
+            //Check if American pronunciation audio data is available 
+            if (pronunciation.length > 1) {
+            innerHtml += `<audio src="${DICTIONARY_API_DATA.source}${pronunciation.audio[1].url}" id="${result.id}"></audio>`;
+            //If not, append British pronunciation audio data
+            } else {
+            innerHtml += `<audio src="${DICTIONARY_API_DATA.source}${pronunciation.audio[0].url}" id="${result.id}"></audio>`;
+            }
+            innerHtml += `<i class="fas fa-volume-up js-play-btn audio-btn" aria-hidden="true" onclick="$('#${result.id}').get(0).play()"></i>`
+        }
+    }
+    
+    innerHtml += `</p>`;
+
+    return innerHtml;
+}
+
+function displayPartOfSpeech(result) {
+    innerHtml = "";
+
+    if (result.part_of_speech) {
+        innerHtml += `<span class="part-of-speech">${result.part_of_speech}</span>`;
+    }
+
+    return innerHtml;
 }
 
 function getNewsFromApi (word, callback) {
