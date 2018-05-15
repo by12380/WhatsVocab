@@ -36,8 +36,8 @@ function getDefinitionFromApi (word, callback) {
 
 function displayWordDefinition (data) {
     let innerHtml = `
-        <hr />
-        <p class="dict-header">DICTIONARY</p>
+        <div class="dict-result-container">
+        <p class="dict-header"><i class="fas fa-book"></i>DICTIONARY</p>
     `;
 
     if (data.results.length != 0) {
@@ -53,7 +53,8 @@ function displayWordDefinition (data) {
                             </p>
                             <p class="pronunciation">
                                 / ${result.pronunciations[0].ipa} /
-                                <audio controls src="${DICTIONARY_API_DATA.source}${result.pronunciations[0].audio[1].url}" id="${result.id}"></audio>
+                                <audio src="${DICTIONARY_API_DATA.source}${result.pronunciations[0].audio[1].url}" id="${result.id}"></audio>
+                                <i class="fas fa-volume-up js-play-btn audio-btn" aria-hidden="true" onclick="$('#${result.id}').get(0).play()"></i>
                             </p>
                             <p>${toFirstCharUpperCase(result.senses[0].definition[0])}</p>
                         </div>
@@ -61,7 +62,7 @@ function displayWordDefinition (data) {
                 `;
             }
         }
-        innerHtml += `</ol>`
+        innerHtml += `</ol>`;
     }
     else
     {
@@ -72,7 +73,7 @@ function displayWordDefinition (data) {
         `;
     }
 
-    innerHtml += `<hr />`;
+    innerHtml += `</div>`;
     $("#dictionaryResults").html(innerHtml);
 }
 

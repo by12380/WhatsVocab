@@ -94,8 +94,25 @@ body {
     font-size: 20px;
 }
 
+.dict-result-container {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin: 20px;
+    padding: 20px;
+    color: #474747;
+}
+
+.fas.fa-book {
+    padding-left: 5px;
+    padding-right: 10px;
+}
+
 .part-of-speech {
     font-size: 16px;
     font-style: italic;
     padding-left: 10px;
+}
+
+.audio-btn {
+    font-size: 14px;
+    cursor: pointer;
 }
