@@ -29,6 +29,12 @@ body {
 
 .word-entry {
     font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.pronunciation {
+    padding-left: 30px;
+    margin: 0px;
 }
 
 .dict-error-msg {
@@ -37,4 +43,10 @@ body {
 
 .news-error-msg {
     font-size: 20px;
+}
+
+.part-of-speech {
+    font-size: 16px;
+    font-style: italic;
+    padding-left: 10px;
 }

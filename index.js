@@ -1,4 +1,5 @@
 const DICTIONARY_API_DATA = {
+    source: "https://api.pearson.com",
     url: "https://api.pearson.com/v2/dictionaries/ldoce5/entries"
 }
 const NEWS_API_DATA = {
@@ -46,7 +47,14 @@ function displayWordDefinition (data) {
                 innerHtml += `
                     <li>
                         <div class="entry-container">
-                            <p class="word-entry">${toFirstCharUpperCase(result.headword)}</p>
+                            <p class="word-entry">
+                                ${toFirstCharUpperCase(result.headword)}
+                                <span class="part-of-speech">${result.part_of_speech}</span>
+                            </p>
+                            <p class="pronunciation">
+                                / ${result.pronunciations[0].ipa} /
+                                <audio controls src="${DICTIONARY_API_DATA.source}${result.pronunciations[0].audio[1].url}" id="${result.id}"></audio>
+                            </p>
                             <p>${toFirstCharUpperCase(result.senses[0].definition[0])}</p>
                         </div>
                     </li>
