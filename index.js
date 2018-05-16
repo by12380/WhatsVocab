@@ -144,22 +144,25 @@ function getNewsFromApi (word, callback) {
 
 function displayNewsArticles (data) {
     let innerHtml = `
-        <hr />
-        <p class="news-header">NEWS ARTICLES</p>
+        <div class="news-result-container">
+        <p class="news-header"><i class="far fa-newspaper"></i>NEWS ARTICLES</p>
     `;
     
     if (data.totalResults != 0) {
         for (let article of data.articles) {
             if (article.description != "") {
                 innerHtml += `
-                    <div>
-                        <p>${article.title}</p>
-                        <p>${article.description}</p>
-                        <p>
+                    <div class="news-result">
+                        <img src="${article.urlToImage}"/>
+                        <div class="news-content">
+                            <p class="article-title">${article.title}</p>
+                            <p class="article-description">&ldquo; ${article.description}... &rdquo;</p>
                             <a href="${article.url}" target="_blank">
-                                Go to article
+                                <button class="go-to-article-btn">              
+                                    Go to article
+                                </button>
                             </a>
-                        </p>
+                        </div>
                     </div>
                 `;
             }
@@ -172,7 +175,7 @@ function displayNewsArticles (data) {
         `;
     }
 
-    innerHtml += `<hr />`;
+    innerHtml += `</div>`;
     $("#newsResults").html(innerHtml);
 }
 
