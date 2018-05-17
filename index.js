@@ -75,6 +75,15 @@ function displayWordDefinition (data) {
         innerHtml += `
             <div>
                 <p class="dict-error-msg">Sorry, no dictionary entries were found.</p>
+                <p>
+                    <a
+                        href="https://www.google.com/search?q=${APP_DATA.query}+definition"
+                        class="try-google-link"
+                        target="_blank">
+                            <span>Try Google</span>
+                            <i class="fas fa-search"></i>
+                    </a>
+                </p>
             </div>
         `;
     }
