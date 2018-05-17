@@ -18,11 +18,18 @@ function handleFormSubmit() {
         e.preventDefault();
         let query = $("#query").val();
         APP_DATA.query = query;
-        getDefinitionFromApi(query, displayWordDefinition);
-        getNewsFromApi(query, displayNewsArticles);
+        let getDefinitionPromise = getDefinitionFromApi(query, displayWordDefinition);
+        let getNewsPromise = getNewsFromApi(query, displayNewsArticles);
 
         //Clear form
         $("#query").val("");
+
+        //Scroll to page result after ajax completes
+        Promise.all([getDefinitionPromise, getNewsPromise]).then(() => {
+            $('html, body').animate({
+                scrollTop: $("#dictionaryResults").offset().top
+            }, 500);
+        })
     })
 }
 
