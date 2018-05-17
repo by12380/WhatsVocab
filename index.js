@@ -74,7 +74,16 @@ function displayWordDefinition (data) {
     if (count === 0) {
         innerHtml += `
             <div>
-                <p class="dict-error-msg">Sorry, no dictionary entries were found.</p>
+                <p class="dict-error-msg">
+                    Sorry, no dictionary entries were found.
+                    <span class="tooltip">
+                        <i class="fas fa-info-circle info-icon"></i>
+                        <span class="tooltiptext">
+                            Is it a new word?</br>
+                            Try singular, present-tense forms.
+                        </span>
+                    </span>
+                </p>
                 <p>
                     <a
                         href="https://www.google.com/search?q=${APP_DATA.query}+definition"
