@@ -143,6 +143,7 @@ function getNewsFromApi (word, callback) {
 }
 
 function displayNewsArticles (data) {
+    let count = 0;
     let innerHtml = `
         <div class="news-result-container">
         <p class="news-header"><i class="far fa-newspaper"></i>NEWS ARTICLES</p>
@@ -150,10 +151,10 @@ function displayNewsArticles (data) {
     
     if (data.totalResults != 0) {
         for (let article of data.articles) {
-            if (article.description != "") {
+            if (article.description) {
                 innerHtml += `
                     <div class="news-result">
-                        <img src="${article.urlToImage}"/>
+                        ${article.urlToImage ? `<img src="${article.urlToImage}"/>` : ''}
                         <div class="news-content">
                             <p class="article-title">${article.title}</p>
                             <p class="article-description">&ldquo; ${article.description}... &rdquo;</p>
@@ -165,11 +166,12 @@ function displayNewsArticles (data) {
                         </div>
                     </div>
                 `;
+                count++;
             }
         }
     }
-    else
-    {
+
+    if (count === 0) {
         innerHtml += `
             <p class="news-error-msg">Sorry, no news articles were found related to the word entry.</p>
         `;
@@ -177,6 +179,10 @@ function displayNewsArticles (data) {
 
     innerHtml += `</div>`;
     $("#newsResults").html(innerHtml);
+}
+
+function displayNewsArticleImage(article) {
+
 }
 
 function toFirstCharUpperCase(str) {
