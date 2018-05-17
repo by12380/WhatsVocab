@@ -125,6 +125,7 @@ function displayPartOfSpeech(result) {
     return innerHtml;
 }
 
+
 function getNewsFromApi (word, callback) {
 
     let newsSourcesData = {

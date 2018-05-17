@@ -11,12 +11,6 @@ body {
     margin: 0px;
 }
 
-@media only screen and (max-width: 640px) {
-    .site-header {
-        font-size: 80px;
-    }
-}
-
 .search-section {
     height: 100vh;
     background: linear-gradient(to bottom right, #1B53CC, #6495FF);
@@ -195,4 +189,27 @@ body {
 .go-to-article-btn:hover, .go-to-article-btn:focus {
     color: rgb(255, 145, 0);
     border-color: rgb(255, 145, 0);
+}
+
+@media only screen and (max-width: 640px) {
+    .site-header {
+        font-size: 80px;
+    }
+
+    .news-result {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .news-content {
+        top: -20px;
+    }
+
+    .article-title {
+        font-size: 22px;
+    }
+
+    .article-description {
+        font-size: 16px;
+    }
 }
