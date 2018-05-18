@@ -125,7 +125,7 @@ function displayAudioPlayerForPronunciation(result) {
     let innerHtml = "";
 
     //Check if pronunciation data is available
-    if (result.pronunciation) {
+    if (result.pronunciations) {
 
         innerHtml += `
             <p class="pronunciation">
