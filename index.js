@@ -183,7 +183,11 @@ function displayNewsArticles (data) {
                         ${article.urlToImage ? `<img src="${article.urlToImage}"/>` : ''}
                         <div class="news-content">
                             <p class="article-title">${article.title}</p>
-                            <p class="article-description">&ldquo; ${article.description}... &rdquo;</p>
+                            <p class="article-description">
+                                &ldquo; ${article.description}... &rdquo;
+                            </p>
+                            <p class="article-source">- ${article.source.name}</p>
+                            <div class="clear"></div>
                             <a href="${article.url}" target="_blank">
                                 <button class="go-to-article-btn">              
                                     Go to article
