@@ -230,10 +230,6 @@ function displayNewsArticles (data) {
     $("#newsResults").html(innerHtml);
 }
 
-function displayNewsArticleImage(article) {
-
-}
-
 function toFirstCharUpperCase(str) {
     return str[0].toUpperCase() + str.substr(1);
 }
