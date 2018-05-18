@@ -33,6 +33,25 @@ function handleFormSubmit() {
     })
 }
 
+function handleBackToSearchClick() {
+    $("nav.affix").click(() => {
+        $('html, body').animate({
+            scrollTop: $("main").offset().top
+        }, 500);
+    })
+}
+
+function handleAffixScroll() {
+    $(window).on("scroll", function() {
+        var scrollPos = $(window).scrollTop();
+        if (scrollPos <= 120) {
+            $("nav.affix").fadeOut();
+        } else {
+            $("nav.affix").fadeIn();
+        }
+    });
+}
+
 function getDefinitionFromApi (word, callback) {
     let data = {
         headword: word,
@@ -219,4 +238,10 @@ function toFirstCharUpperCase(str) {
     return str[0].toUpperCase() + str.substr(1);
 }
 
-$(handleFormSubmit);
+function initializeApp() {
+    handleFormSubmit();
+    handleBackToSearchClick();
+    handleAffixScroll();
+}
+
+$(initializeApp);
