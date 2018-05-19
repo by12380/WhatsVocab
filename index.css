@@ -64,6 +64,7 @@ a:link, a:visited, a:hover, a:active {
     color: lightslategrey;
     top: -1px;
     height: 60px;
+    background-color: white;
 }
 
 .search-btn:focus, .search-btn:hover{
