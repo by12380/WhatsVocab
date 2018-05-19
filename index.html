@@ -16,11 +16,11 @@
     </script>
 </head>
 <body>
-    <nav class="affix">
-        <div class="side-nav-search-btn">
+    <nav role="navigation" class="affix">
+        <button class="side-nav-search-btn">
             <i class="fas fa-search side-nav-search-icon"></i>
             <span>Back to search</span>
-        </div>
+        </button>
     </nav>
     <main role="main">
         <section class="search-section">
@@ -30,14 +30,21 @@
                     <form action="#" method="get" id="searchForm" class="search-form">
                         <h1 class="site-header">WhatsVocab</h1>
                         <div>
-                            <input type="text" name="query" id="query" class="search-box" placeholder="e.g. Apple" required>
-                            <button type="submit" class="search-btn">
+                            <input
+                                type="text"
+                                name="query"
+                                id="query"
+                                class="search-box"
+                                placeholder="e.g. Apple"
+                                required
+                                aria-label="Enter a vocabulary. For example, Apple."
+                            >
+                            <button type="submit" class="search-btn" aria-label="search">
                                 <i class="fas fa-search"></i>
                             </button>
                         </div>
                         <div class="site-motto">
                             <p>Learn vocabulary through the modern web</p>
-                            <p></p>
                         </div>
                     </form>
                 </div>

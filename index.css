@@ -3,6 +3,10 @@ body {
     font-family: 'Muli', sans-serif;
 }
 
+h2, h3 {
+    font-weight: normal;
+}
+
 /* reset link style */
 a:link, a:visited, a:hover, a:active {
     color: black;
@@ -195,6 +199,7 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .go-to-article-btn {
+    display: inline-block;
     border: solid 2px #FDD008;
     border-radius: 25px;
     color: #FDD008;
@@ -211,7 +216,8 @@ a:link, a:visited, a:hover, a:active {
     transition: all 0.3s;
 }
 
-.go-to-article-btn:hover, .go-to-article-btn:focus {
+.go-to-article-link:hover > .go-to-article-btn,
+.go-to-article-link:focus > .go-to-article-btn{
     color: rgb(255, 145, 0);
     border-color: rgb(255, 145, 0);
 }
@@ -305,7 +311,8 @@ nav.affix {
     z-index: 9999;
 }
 
-nav.affix > div {
+nav.affix > button {
+    border: 0;
     color: white;
     width: 50px;
     height: 50px;
@@ -318,32 +325,30 @@ nav.affix > div {
     transition: all 0.3s;
 }
 
-nav.affix > div:hover {
+nav.affix > button:hover, nav.affix > button:focus {
     width: 150px;
     border-radius: 25px;
 }
 
-nav.affix > div > span {
+nav.affix > button > span {
     position: relative;
     font-size: 0;
-    top: 8px;
     opacity: 0;
     transition: all 0.3s;
     margin-left: -5px;
 }
 
-nav.affix > div:hover > span {
+nav.affix > button:hover > span,
+nav.affix > button:focus > span {
     margin: 0;
     padding-left: 4px;
     padding-right: 3px;
     opacity: 1;
     font-size: 14px;
-    top: 14px;
 }
 
 .side-nav-search-icon {
     position: relative;
-    top: 15px;
 }
 
 @media only screen and (max-width: 640px) {

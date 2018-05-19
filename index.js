@@ -64,7 +64,7 @@ function displayWordDefinition (data) {
     let count = 0;
     let innerHtml = `
         <div class="dict-result-container">
-        <p class="dict-header"><i class="fas fa-book"></i>DICTIONARY</p>
+        <h2 class="dict-header"><i class="fas fa-book"></i>DICTIONARY</h2>
     `;
 
     if (data.results.length != 0) {
@@ -75,10 +75,10 @@ function displayWordDefinition (data) {
                 innerHtml += `
                     <li>
                         <div class="entry-container">
-                            <p class="word-entry">
+                            <h3 class="word-entry">
                                 ${toFirstCharUpperCase(result.headword)}
                                 ${displayPartOfSpeech(result)}
-                            </p>
+                            </h3>
                             ${displayAudioPlayerForPronunciation(result)}
                             <p>${toFirstCharUpperCase(result.senses[0].definition[0])}</p>
                         </div>
@@ -191,7 +191,7 @@ function displayNewsArticles (data) {
     let count = 0;
     let innerHtml = `
         <div class="news-result-container">
-        <p class="news-header"><i class="far fa-newspaper"></i>NEWS ARTICLES</p>
+        <h2 class="news-header"><i class="far fa-newspaper"></i>NEWS ARTICLES</h2>
     `;
     
     if (data.totalResults != 0) {
@@ -199,18 +199,18 @@ function displayNewsArticles (data) {
             if (article.description) {
                 innerHtml += `
                     <div class="news-result">
-                        ${article.urlToImage ? `<img src="${article.urlToImage}"/>` : ''}
+                        ${article.urlToImage ? `<img src="${article.urlToImage}"/ alt="image from ${article.source.name}">` : ''}
                         <div class="news-content">
-                            <p class="article-title">${article.title}</p>
+                            <h3 class="article-title">${article.title}</h3>
                             <p class="article-description">
                                 &ldquo; ${article.description}... &rdquo;
                             </p>
                             <p class="article-source">- ${article.source.name}</p>
                             <div class="clear"></div>
-                            <a href="${article.url}" target="_blank">
-                                <button class="go-to-article-btn">              
+                            <a class="go-to-article-link" href="${article.url}" target="_blank">
+                                <div class="go-to-article-btn">
                                     Go to article
-                                </button>
+                                </div>
                             </a>
                         </div>
                     </div>
