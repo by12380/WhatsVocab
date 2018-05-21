@@ -26,10 +26,17 @@ a:link, a:visited, a:hover, a:active {
     background: linear-gradient(to bottom right, #1B53CC, #6495FF);
 }
 
+.search-col {
+    position: relative;
+    height: 100vh;
+}
+
 .search-form {
+    position: absolute;
     text-align: center;
-    padding-top: 200px;
-    padding-bottom: 200px;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .search-box {
@@ -39,7 +46,7 @@ a:link, a:visited, a:hover, a:active {
     border-bottom-left-radius: 5px;
     padding: 20px;
     width: 70%;
-    font-size: 20px;
+    font-size: 21px;
     font-family: 'Muli', sans-serif;
     height: 60px;
     color: lightslategray;
@@ -353,6 +360,10 @@ nav.affix > button:focus > span {
 }
 
 @media only screen and (max-width: 640px) {
+    .search-box {
+        width: 60%;
+    }
+
     .site-header {
         font-size: 80px;
     }
