@@ -7,7 +7,7 @@
     <title>WhatsVocab</title>
     <link href="index.css" rel="stylesheet" type="text/css" />
     <link href="grid.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Muli|Nunito:200i|Lovers+Quarrel|Source+Serif+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli|Nunito:200i,700i|Lovers+Quarrel|Source+Serif+Pro" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <script
         src="https://code.jquery.com/jquery-3.3.1.min.js"
@@ -29,22 +29,27 @@
                 <div class="col-10 search-col">
                     <form action="#" method="get" id="searchForm" class="search-form">
                         <h1 class="site-header">WhatsVocab</h1>
+                        <p class="site-motto">Look up hard vocabulary words in modern news articles</p>
                         <div>
                             <input
                                 type="text"
                                 name="query"
                                 id="query"
                                 class="search-box"
-                                placeholder="e.g. Apple"
+                                placeholder="e.g. alacrity"
                                 required
-                                aria-label="Enter a vocabulary. For example, Apple."
+                                aria-label="Enter a vocabulary. For example, alacrity."
                             >
                             <button type="submit" class="search-btn" aria-label="search">
                                 <i class="fas fa-search"></i>
                             </button>
                         </div>
-                        <div class="site-motto">
-                            <p>Learn vocabulary through the modern web</p>
+                        <div class="result-example" aria-hidden="true">
+                            <p>
+                                “ ...the civic body displayed unusual <span>alacrity</span> in fixing the stretch.... ”
+                            <br />
+                                - The Times of India
+                            </p>
                         </div>
                     </form>
                 </div>

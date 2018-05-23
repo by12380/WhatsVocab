@@ -19,6 +19,7 @@ a:link, a:visited, a:hover, a:active {
     font-weight: 200;
     color: white;
     margin: 0px;
+    margin-bottom: -30px;
 }
 
 .search-section {
@@ -293,7 +294,7 @@ a.try-google-link:hover, a.try-google-link:focus {
     bottom: 2px;
 }
 
-.site-motto {
+.site-motto, .result-example {
     color: white;
     font-size: 16px;
     font-weight: 200;
@@ -304,6 +305,10 @@ a.try-google-link:hover, a.try-google-link:focus {
 
 .site-motto > p {
     margin: 0;
+}
+
+.result-example span {
+    font-weight: 700;
 }
 
 div.clear {
