@@ -26,9 +26,11 @@ function handleFormSubmit() {
 
         //Scroll to page result after ajax completes
         Promise.all([getDefinitionPromise, getNewsPromise]).then(() => {
-            $('html, body').animate({
-                scrollTop: $("#dictionaryResults").offset().top
-            }, 500);
+            setTimeout(function() {
+                $('html, body').animate({
+                    scrollTop: $("#dictionaryResults").offset().top
+                }, 500);
+            }, 300);
         })
     })
 }
@@ -57,7 +59,7 @@ function getDefinitionFromApi (word, callback) {
         headword: word,
         limit: 5
     }
-    $.getJSON(DICTIONARY_API_DATA.url, data, callback);
+    return $.getJSON(DICTIONARY_API_DATA.url, data, callback);
 }
 
 function displayWordDefinition (data) {
@@ -171,7 +173,7 @@ function getNewsFromApi (word, callback) {
     }
 
     //Retrive news sources data then fetch articles
-    $.getJSON(NEWS_API_DATA.newsSourcesUrl, newsSourcesData, result => {
+    return $.getJSON(NEWS_API_DATA.newsSourcesUrl, newsSourcesData, result => {
         let sources = result.sources.map(source => {
             return source.id;
         })
