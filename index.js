@@ -36,7 +36,7 @@ function handleFormSubmit() {
 }
 
 function handleBackToSearchClick() {
-    $("nav.affix").click(() => {
+    $(".side-nav").click(() => {
         $('html, body').animate({
             scrollTop: $("main").offset().top
         }, 500);
@@ -47,9 +47,9 @@ function handleAffixScroll() {
     $(window).on("scroll", function() {
         var scrollPos = $(window).scrollTop();
         if (scrollPos <= 120) {
-            $("nav.affix").fadeOut();
+            $(".side-nav").fadeOut();
         } else {
-            $("nav.affix").fadeIn();
+            $(".side-nav").fadeIn();
         }
     });
 }
