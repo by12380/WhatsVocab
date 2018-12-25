@@ -23,7 +23,7 @@ News Article Page:
 
 ## Built With
 
-HTML/CSS/JavaScript/jQuery
+HTML/CSS + SCSS/JavaScript/jQuery
 
 ## Powered By
 
