@@ -82,53 +82,6 @@ div.clear {
   clear: both;
 }
 
-/* Tooltip container */
-.tooltip {
-  position: relative;
-  display: inline-block;
-  font-size: 14px;
-}
-
-/* Tooltip text */
-.tooltip .tooltiptext {
-  visibility: hidden;
-  width: 220px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  padding: 5px 0;
-  border-radius: 6px;
-  font-size: 12px;
-  /* Position the tooltip text */
-  position: absolute;
-  z-index: 1;
-  bottom: 180%;
-  left: 50%;
-  margin-left: -110px;
-  /* Fade in tooltip */
-  opacity: 0;
-  -webkit-transition: opacity 0.3s;
-  transition: opacity 0.3s;
-}
-
-/* Tooltip arrow */
-.tooltip .tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: black transparent transparent transparent;
-}
-
-/* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
-}
-
 .side-nav {
   display: none;
   position: fixed;
@@ -429,5 +382,51 @@ a.try-google-link:hover, a.try-google-link:focus {
 .search-form__submit-btn:hover, .search-form__submit-btn:focus {
   outline: none;
   background-color: whitesmoke;
+}
+
+/* Tooltip container */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  /* Show the tooltip text when you mouse over the tooltip container */
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 220px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  font-size: 12px;
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 180%;
+  left: 50%;
+  margin-left: -110px;
+  /* Fade in tooltip */
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  /* Tooltip arrow */
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
 /*# sourceMappingURL=index.css.map */
