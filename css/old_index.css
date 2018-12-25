@@ -1,0 +1,396 @@
+body {
+    margin: 0;
+    font-family: 'Muli', sans-serif;
+}
+
+h2, h3 {
+    font-weight: normal;
+}
+
+/* reset link style */
+a:link, a:visited, a:hover, a:active {
+    color: black;
+    text-decoration: none;
+}
+
+.site-header {
+    font-family: 'Lovers Quarrel', cursive;
+    font-size: 160px;
+    font-weight: 200;
+    color: white;
+    margin: 0px;
+    margin-bottom: -30px;
+}
+
+.search-section {
+    height: 100vh;
+    background: linear-gradient(to bottom right, #1B53CC, #6495FF);
+}
+
+.search-col {
+    position: relative;
+    height: 100vh;
+}
+
+.search-form {
+    position: absolute;
+    text-align: center;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.search-box {
+    border: 0px;
+    border-radius: 0px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 20px;
+    width: 70%;
+    font-size: 21px;
+    font-family: 'Muli', sans-serif;
+    height: 60px;
+    color: lightslategray;
+    caret-color: lightslategrey;
+}
+
+.search-box:focus {
+    outline: none;
+}
+
+.search-btn {
+    position: relative;
+    border: 0px;
+    border-radius: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: -5px;
+    font-size: 20px;
+    cursor: pointer;
+    color: lightslategrey;
+    top: -1px;
+    height: 60px;
+    background-color: white;
+}
+
+.search-btn:focus, .search-btn:hover{
+    outline: none;
+    background-color: whitesmoke;
+}
+
+.entry-container {
+    padding: 15px;
+}
+
+.dict-header {
+    font-size: 26px;
+    color: royalblue;
+}
+
+.word-entry {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.pronunciation {
+    padding-left: 30px;
+    margin: 0px;
+}
+
+.dict-error-msg {
+    font-size: 20px;
+}
+
+.news-error-msg {
+    font-size: 20px;
+}
+
+.dict-result-container {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin: 20px;
+    padding: 20px;
+    color: #474747;
+}
+
+.fas.fa-book {
+    padding-left: 5px;
+    padding-right: 10px;
+}
+
+.part-of-speech {
+    font-size: 16px;
+    font-style: italic;
+    padding-left: 10px;
+}
+
+.audio-btn {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.news-header {
+    font-size: 26px;
+    color: black;
+}
+
+.news-result-container {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin: 20px;
+    padding: 20px;
+    background-color: #fdd66a;
+}
+
+.far.fa-newspaper {
+    padding-left: 5px;
+    padding-right: 10px;
+}
+
+.news-result {
+    text-align: center;
+    font-family: 'Source Serif Pro', serif;
+    margin: 80px;
+    margin-bottom: 120px;
+}
+
+.news-result:last-child {
+    margin-bottom: 0px;
+}
+
+.news-result > img {
+    max-width: 80%;
+    max-height: 70%;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.8);
+    border-radius: 5px;
+    color: #474747;
+    transition: all 0.3s;
+}
+
+.news-content {
+    position: relative;
+    box-shadow: 0 4px 12px 0 rgba(0,0,0,0.8);
+    border-radius: 5px;
+    width: 100%;
+    top: -50px;
+    padding: 20px;
+    background: linear-gradient(to bottom right, #141414, #1C1C1C);
+    transition: all 0.3s;
+}
+
+.news-result > img:hover {
+    box-shadow: 0 4px 16px 1px rgba(0,0,0,0.8);
+}
+
+.news-content:hover {
+    box-shadow: 0 4px 18px 2px rgba(0,0,0,1);
+}
+
+.article-title {
+    font-size: 24px;
+    /* font-weight: bold; */
+    color: white;
+}
+
+.article-description {
+    font-size: 18px;
+    font-style: italic;
+    color: white;
+    margin-bottom: 2px;
+}
+
+.article-source {
+    color: white;
+    font-style: italic;
+    float: right;
+    margin: 0;
+    margin-right: 10%;
+}
+
+.go-to-article-btn {
+    display: inline-block;
+    border: solid 2px #FDD008;
+    border-radius: 25px;
+    color: #FDD008;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 26px;
+    padding-right: 26px;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Muli', sans-serif;
+    transition: all 0.3s;
+}
+
+.go-to-article-link:hover > .go-to-article-btn,
+.go-to-article-link:focus > .go-to-article-btn{
+    color: rgb(255, 145, 0);
+    border-color: rgb(255, 145, 0);
+}
+
+a.try-google-link {
+    font-size: 18px;
+    color: royalblue;
+    transition: all 0.3s;
+}
+
+a.try-google-link:hover, a.try-google-link:focus {
+    color: rgb(21, 62, 182);
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 220px;
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    font-size: 12px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+    bottom: 180%;
+    left: 50%;
+    margin-left: -110px;
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(0, 0, 0) transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.info-icon {
+    position: relative;
+    bottom: 2px;
+}
+
+.site-motto, .result-example {
+    color: white;
+    font-size: 16px;
+    font-weight: 200;
+    font-style: italic;
+    font-family: 'Nunito', sans-serif;
+    margin-top: 10px;
+}
+
+.site-motto > p {
+    margin: 0;
+}
+
+.result-example span {
+    font-weight: 700;
+}
+
+div.clear {
+    clear: both;
+}
+
+nav.affix {
+    display: none;
+    position: fixed;
+    right: 5px;
+    top: 50%;
+    transform: translate(0, -50%);
+    z-index: 9999;
+}
+
+nav.affix > button {
+    border: 0;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: rgba(255, 20, 147, 0.9);
+    box-shadow: 0 0 4px 0 rgb(0, 0, 0, 0.9);
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+nav.affix > button:hover, nav.affix > button:focus {
+    width: 150px;
+    border-radius: 25px;
+}
+
+nav.affix > button > span {
+    position: relative;
+    font-size: 0;
+    opacity: 0;
+    transition: all 0.3s;
+    margin-left: -5px;
+}
+
+nav.affix > button:hover > span,
+nav.affix > button:focus > span {
+    margin: 0;
+    padding-left: 4px;
+    padding-right: 3px;
+    opacity: 1;
+    font-size: 14px;
+}
+
+.side-nav-search-icon {
+    position: relative;
+}
+
+@media only screen and (max-width: 640px) {
+    .search-box {
+        width: 60%;
+    }
+
+    .site-header {
+        font-size: 80px;
+    }
+
+    .news-result {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .news-content {
+        top: -20px;
+    }
+
+    .article-title {
+        font-size: 22px;
+    }
+
+    .article-description {
+        font-size: 16px;
+    }
+
+    .site-motto {
+        font-size: 14px;
+    }
+}
