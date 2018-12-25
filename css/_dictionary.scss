@@ -21,3 +21,29 @@
         font-size: 20px;
     }
 }
+
+.part-of-speech {
+    font-size: 16px;
+    font-style: italic;
+    padding-left: 10px;
+}
+
+.audio-btn {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+a.try-google-link {
+    font-size: 18px;
+    color: royalblue;
+    transition: all 0.3s;
+
+    &:hover, &:focus {
+        color: rgb(21, 62, 182);
+    }
+}
+
+.fas.fa-book {
+    padding-left: 5px;
+    padding-right: 10px;
+}

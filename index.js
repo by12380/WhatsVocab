@@ -192,7 +192,7 @@ function getNewsFromApi (word, callback) {
 function displayNewsArticles (data) {
     let count = 0;
     let innerHtml = `
-        <div class="news-result-container">
+        <div class="news container-card container-card--yellow-background">
         <h2 class="news-header"><i class="far fa-newspaper"></i>NEWS ARTICLES</h2>
     `;
     
@@ -200,17 +200,17 @@ function displayNewsArticles (data) {
         for (let article of data.articles) {
             if (article.description) {
                 innerHtml += `
-                    <div class="news-result">
+                    <div class="news-entry">
                         ${article.urlToImage ? `<img src="${article.urlToImage}"/ alt="image from ${article.source.name}">` : ''}
-                        <div class="news-content">
-                            <h3 class="article-title">${article.title}</h3>
-                            <p class="article-description">
+                        <div class="news-entry-article">
+                            <h3 class="news-entry-article__title">${article.title}</h3>
+                            <p class="news-entry-article__description">
                                 &ldquo; ${article.description}... &rdquo;
                             </p>
-                            <p class="article-source">- ${article.source.name}</p>
+                            <p class="news-entry-article__source">- ${article.source.name}</p>
                             <div class="clear"></div>
-                            <a class="go-to-article-link" href="${article.url}" target="_blank">
-                                <div class="go-to-article-btn">
+                            <a class="news-entry-article__go-to-link" href="${article.url}" target="_blank">
+                                <div class="news-entry-article__go-to-btn hover">
                                     Go to article
                                 </div>
                             </a>
@@ -224,7 +224,7 @@ function displayNewsArticles (data) {
 
     if (count === 0) {
         innerHtml += `
-            <p class="news-error-msg">Sorry, no news articles were found related to the word entry.</p>
+            <p class="news-error__message">Sorry, no news articles were found related to the word entry.</p>
         `;
     }
 
