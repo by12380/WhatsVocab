@@ -1,0 +1,23 @@
+.dictionary {
+    color: #474747;
+}
+
+.dictionary-header {
+    font-size: 26px;
+    color: royalblue;
+}
+
+.dictionary-entry {
+    padding: 15px;
+
+    &__title {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+}
+
+.dictionary-error {
+    &__message {
+        font-size: 20px;
+    }
+}

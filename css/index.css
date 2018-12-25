@@ -49,4 +49,33 @@
 .side-nav__search-btn-icon {
   position: relative;
 }
+
+.dictionary {
+  color: #474747;
+}
+
+.dictionary-header {
+  font-size: 26px;
+  color: royalblue;
+}
+
+.dictionary-entry {
+  padding: 15px;
+}
+
+.dictionary-entry__title {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.dictionary-error__message {
+  font-size: 20px;
+}
+
+.container-card {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  padding: 20px;
+}
 /*# sourceMappingURL=index.css.map */

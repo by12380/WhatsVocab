@@ -65,8 +65,8 @@ function getDefinitionFromApi (word, callback) {
 function displayWordDefinition (data) {
     let count = 0;
     let innerHtml = `
-        <div class="dict-result-container">
-        <h2 class="dict-header"><i class="fas fa-book"></i>DICTIONARY</h2>
+        <div class="dictionary container-card">
+        <h2 class="dictionary-header"><i class="fas fa-book"></i>DICTIONARY</h2>
     `;
 
     if (data.results.length != 0) {
@@ -76,8 +76,8 @@ function displayWordDefinition (data) {
                 && result.senses[0].definition) {
                 innerHtml += `
                     <li>
-                        <div class="entry-container">
-                            <h3 class="word-entry">
+                        <div class="dictionary-entry">
+                            <h3 class="dictionary-entry__title">
                                 ${toFirstCharUpperCase(result.headword)}
                                 ${displayPartOfSpeech(result)}
                             </h3>
@@ -94,8 +94,8 @@ function displayWordDefinition (data) {
 
     if (count === 0) {
         innerHtml += `
-            <div>
-                <p class="dict-error-msg">
+            <div class="dictionary-error">
+                <p class="dictionary-error__message">
                     Sorry, no dictionary entries were found.
                     <span class="tooltip">
                         <i class="fas fa-info-circle info-icon"></i>
